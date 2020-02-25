@@ -23,7 +23,6 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
-#include <xc.h>
 #include <stdint.h>                 //libreria de variables
 #include <stdio.h>                  //libreria para convertir numeros a caracteres
 #define _XTAL_FREQ 4000000          //oscilador de 4MHz
