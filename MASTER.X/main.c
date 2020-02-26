@@ -47,23 +47,31 @@ void main(void) {
     config();               //configuracion de bits
     LCD8bits_init();        //inicio de la pantalla LCD
     LCDcursorSet(1,1);
+    __delay_ms(2);
     LCDisplay("S1:");
     LCDcursorSet(1,6);
     LCDisplay("CONT:");               //Pone los titulos en la pantalla
+    LCDcursorSet(1,13);
+    LCDisplay("S2:");
+    
     while(1){
+        
+        
         I2C_Master_Start();
         I2C_Master_Write(0x51);
         va1 = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(10);
         
-        sprintf(contStr, "%d",cont);
+ 
         
         I2C_Master_Start();
-        I2C_Master_Write(0x61);
+        I2C_Master_Write(0x41);
         cont = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(10);
+        
+        sprintf(contStr, "%d",cont);
         
         pot1 = va1;
         pot1 = pot1 * 5/255;
@@ -83,14 +91,14 @@ void main(void) {
             LCDisplay(decpot1);
         } 
         LCDisplay("V");
-        LCDcursorSet(2,6);
+        LCDcursorSet(2,7);
         if (cont <= 9){
             LCDisplay("0");
             LCDisplay(contStr);
         }else{
             LCDisplay(contStr);
         }
-        
+        __delay_ms(2);
         
         
     }

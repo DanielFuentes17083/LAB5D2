@@ -4,27 +4,27 @@
  *
  * Created on 13 de febrero de 2020, 12:34 PM
  */
-#define rs PORTBbits.RB6
-#define E PORTBbits.RB7             //para no confundir los pines
+#define rs PORTBbits.RB1
+#define E PORTBbits.RB0             //para no confundir los pines
 #define data PORTD
 #define _XTAL_FREQ 4000000
 #include "LCD.h"
 #include <xc.h>
 
 void LCD8bits_init(void){           //configuracion inicial de la LCD
-    __delay_ms(20);
-    LCDcmd(0x30);
+    __delay_ms(15);
+    LCDcmd(0x030);
     __delay_ms(5);
-    LCDcmd(0x30);
-    __delay_ms(1);
-    LCDcmd(0x30);
-    __delay_ms(1);
+    LCDcmd(0x030);
+    __delay_ms(11);
+    LCDcmd(0x030);
+    __delay_ms(160);
     LCDcmd(0x38);
     LCDcmd(0x10);
     LCDcmd(0x01);
     LCDcmd(0x06);
     LCDcmd(0x0C);
-    LCDcmd(0x80);
+    //LCDcmd(0x80);
 }
 
 void LCDcmd(unsigned char cmd){     //Escrinbe en la cmd de la LCD

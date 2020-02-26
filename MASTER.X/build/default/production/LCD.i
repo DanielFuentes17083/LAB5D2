@@ -2509,35 +2509,35 @@ void LCDcursorSet(unsigned char row, unsigned char column);
 
 
 void LCD8bits_init(void){
-    _delay((unsigned long)((20)*(4000000/4000.0)));
-    LCDcmd(0x30);
+    _delay((unsigned long)((15)*(4000000/4000.0)));
+    LCDcmd(0x030);
     _delay((unsigned long)((5)*(4000000/4000.0)));
-    LCDcmd(0x30);
-    _delay((unsigned long)((1)*(4000000/4000.0)));
-    LCDcmd(0x30);
-    _delay((unsigned long)((1)*(4000000/4000.0)));
+    LCDcmd(0x030);
+    _delay((unsigned long)((11)*(4000000/4000.0)));
+    LCDcmd(0x030);
+    _delay((unsigned long)((160)*(4000000/4000.0)));
     LCDcmd(0x38);
     LCDcmd(0x10);
     LCDcmd(0x01);
     LCDcmd(0x06);
     LCDcmd(0x0C);
-    LCDcmd(0x80);
+
 }
 
 void LCDcmd(unsigned char cmd){
     PORTD = cmd;
-    PORTBbits.RB6 = 0;
-    PORTBbits.RB7 = 1;
+    PORTBbits.RB1 = 0;
+    PORTBbits.RB0 = 1;
     _delay((unsigned long)((4)*(4000000/4000.0)));
-    PORTBbits.RB7 = 0;
+    PORTBbits.RB0 = 0;
 }
 
 void LCDwrite(unsigned char dato){
     PORTD = dato;
-    PORTBbits.RB6 = 1;
-    PORTBbits.RB7 = 1;
+    PORTBbits.RB1 = 1;
+    PORTBbits.RB0 = 1;
     _delay((unsigned long)((4)*(4000000/4000.0)));
-    PORTBbits.RB7 = 0;
+    PORTBbits.RB0 = 0;
 }
 
 void LCDisplay(char *val){

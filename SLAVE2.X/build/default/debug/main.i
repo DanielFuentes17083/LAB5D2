@@ -2707,14 +2707,29 @@ void I2C_Slave_Init(uint8_t address);
 uint8_t z;
 uint8_t dato;
 uint8_t readed;
-uint8_t cont = 0;
-uint8_t past1 = 0;
-uint8_t past2 = 0;
 
 void setup(void);
 
 void __attribute__((picinterrupt(("")))) isr(void){
+   if(INTCONbits.RBIF == 1 && PORTBbits.RB0 == 1){
+       PORTDbits.RD1 = 1;
+       PORTA++;
+       if(PORTA > 15){
+           PORTA = 0;
+       }
+       INTCONbits.RBIF = 0;
+   }
+   if(INTCONbits.RBIF == 1 && PORTBbits.RB1 == 1){
+       PORTDbits.RD1 = 0;
+       PORTA--;
+       if(PORTA > 15){
+           PORTA = 15;
+       }
+
+       INTCONbits.RBIF = 0;
+   }
    if(PIR1bits.SSPIF == 1){
+
         SSPCONbits.CKP = 0;
 
         if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
@@ -2750,22 +2765,11 @@ void __attribute__((picinterrupt(("")))) isr(void){
 void main(void) {
     setup();
     while(1){
-        if (PORTBbits.RB0 == 1 && past1 == 0){
-            if(PORTA == 15){
-                PORTA = 0;
-            }else{
-                PORTA++;
-            }
-            past1 = 1;
-        }
-        if (PORTBbits.RB1 == 1 && past2 == 0){
-            PORTA--;
-            if(PORTA > 15){
-                PORTA = 0;
-            }
-            past2 = 1;
-        }
-        }
+        PORTD = 1;
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+        PORTD = 0;
+        _delay((unsigned long)((100)*(8000000/4000.0)));
+    }
     return;
 }
 
@@ -2774,6 +2778,13 @@ void setup(void){
     TRISB = 0;
     TRISBbits.TRISB0 = 1;
     TRISBbits.TRISB1 = 1;
+    INTCONbits.RBIE = 1;
+    INTCONbits.GIE = 1;
+    IOCB = 0;
+    IOCBbits.IOCB0 = 1;
+    IOCBbits.IOCB1 = 1;
     PORTA = 0;
+    PORTB = 0;
+    INTCONbits.RBIF = 0;
     I2C_Slave_Init(0x40);
 }
