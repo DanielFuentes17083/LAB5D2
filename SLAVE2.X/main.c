@@ -87,15 +87,24 @@ void main(void) {
         if (PORTBbits.RB1 == 1 && past2 == 0){                                  //si presiona P2 para moverse y guarda valor
             PORTA--;
             if(PORTA > 15){
-                PORTA = 0;
+                PORTA = 15;
             }
             past2 = 1;
         }
+        if (PORTBbits.RB0 == 0){                                                
+            past1 = 0;
         }
+                                                                                //antirrebote
+        if (PORTBbits.RB1 == 0){
+            past2 = 0;
+        }
+    }
     return;
 }
 
 void setup(void){
+    ANSEL = 0;
+    ANSELH = 0;
     TRISA = 0;
     TRISB = 0;
     TRISBbits.TRISB0 = 1;

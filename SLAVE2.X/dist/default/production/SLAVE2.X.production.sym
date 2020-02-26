@@ -22,6 +22,7 @@ _TRISB 86 0 ABS 0
 _SSPIF 63 0 ABS 0
 _PORTA 5 0 ABS 0
 reset_vec 0 0 CODE 0
+_ANSEL 188 0 ABS 0
 wtemp0 7E 0 ABS 0
 _past1 71 0 COMMON 1
 _past2 70 0 COMMON 1
@@ -31,7 +32,7 @@ __Lconfig 2007 0 CONFIG 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
 __size_of_isr 0 0 ABS 0
-_setup CE 0 CODE 0
+_setup D9 0 CODE 0
 __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
 _TRISC3 43B 0 ABS 0
@@ -43,6 +44,7 @@ __Leeprom_data 0 0 EEDATA 3
 _PIR1bits C 0 ABS 0
 _SSPADD 93 0 ABS 0
 ___int_sp 0 0 STACK 2
+_ANSELH 189 0 ABS 0
 _SSPBUF 13 0 ABS 0
 __Habs1 0 0 ABS 0
 __Labs1 0 0 ABS 0
@@ -62,7 +64,7 @@ __Lcode 0 0 ABS 0
 saved_w 7E 0 ABS 0
 __Hinit C 0 CODE 0
 __Linit C 0 CODE 0
-__end_of_main B4 0 CODE 0
+__end_of_main BF 0 CODE 0
 __Htext 0 0 ABS 0
 __Ltext 0 0 ABS 0
 I2C_Slave_Init@address 79 0 COMMON 1
@@ -87,10 +89,10 @@ ___latbits 2 0 ABS 0
 __Hpowerup 0 0 CODE 0
 _SSPSTAT 94 0 ABS 0
 __Lpowerup 0 0 CODE 0
-__end_of_I2C_Slave_Init CE 0 CODE 0
+__end_of_I2C_Slave_Init D9 0 CODE 0
 _SSPCON2bits 91 0 ABS 0
-__ptext1 CE 0 CODE 0
-__ptext2 B4 0 CODE 0
+__ptext1 D9 0 CODE 0
+__ptext2 BF 0 CODE 0
 __ptext3 19 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
@@ -123,13 +125,13 @@ __pbssCOMMON 70 0 COMMON 1
 _SSPCONbits 14 0 ABS 0
 __Hend_init F 0 CODE 0
 __Lend_init C 0 CODE 0
-__end_of_setup DE 0 CODE 0
+__end_of_setup ED 0 CODE 0
 __Hreset_vec 3 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 intlevel0 0 0 ENTRY 0
 __CFG_WDTE$OFF 0 0 ABS 0
 intlevel1 0 0 ENTRY 0
-_I2C_Slave_Init B4 0 CODE 0
+_I2C_Slave_Init BF 0 CODE 0
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0
 intlevel2 0 0 ENTRY 0
 intlevel3 0 0 ENTRY 0
@@ -149,23 +151,23 @@ __CFG_CP$OFF 0 0 ABS 0
 __CFG_LVP$OFF 0 0 ABS 0
 %segments
 reset_vec 0 5 CODE 0 0
-intentry 8 1BB CODE 8 0
+intentry 8 1D9 CODE 8 0
 config 400E 4011 CONFIG 400E 0
 bssCOMMON 70 7A COMMON 70 1
 %locals
 dist/default/production\SLAVE2.X.production.o
-C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
-639 F 0 CODE 0
-642 F 0 CODE 0
-668 F 0 CODE 0
-669 10 0 CODE 0
-670 11 0 CODE 0
-671 12 0 CODE 0
-672 13 0 CODE 0
-673 14 0 CODE 0
-679 15 0 CODE 0
-681 15 0 CODE 0
-682 16 0 CODE 0
+C:\Users\PowerLab\AppData\Local\Temp\sis.s
+643 F 0 CODE 0
+646 F 0 CODE 0
+672 F 0 CODE 0
+673 10 0 CODE 0
+674 11 0 CODE 0
+675 12 0 CODE 0
+676 13 0 CODE 0
+677 14 0 CODE 0
+683 15 0 CODE 0
+685 15 0 CODE 0
+686 16 0 CODE 0
 main.c
 76 7E 0 CODE 0
 77 7E 0 CODE 0
@@ -179,28 +181,34 @@ main.c
 88 A5 0 CODE 0
 89 A7 0 CODE 0
 90 AD 0 CODE 0
-92 AE 0 CODE 0
-98 CE 0 CODE 0
-99 CE 0 CODE 0
-100 D1 0 CODE 0
-101 D2 0 CODE 0
-102 D3 0 CODE 0
-103 D4 0 CODE 0
-104 D7 0 CODE 0
-105 DD 0 CODE 0
+92 AF 0 CODE 0
+94 B1 0 CODE 0
+95 B5 0 CODE 0
+98 B6 0 CODE 0
+99 BA 0 CODE 0
+105 D9 0 CODE 0
+106 D9 0 CODE 0
+107 DC 0 CODE 0
+108 DD 0 CODE 0
+109 E0 0 CODE 0
+110 E1 0 CODE 0
+111 E2 0 CODE 0
+112 E3 0 CODE 0
+113 E6 0 CODE 0
+114 EC 0 CODE 0
 I2C.c
-94 B4 0 CODE 0
-96 B5 0 CODE 0
-97 B9 0 CODE 0
-98 BD 0 CODE 0
-99 C1 0 CODE 0
-100 C3 0 CODE 0
-101 C4 0 CODE 0
-102 C5 0 CODE 0
-103 C6 0 CODE 0
-104 C7 0 CODE 0
-105 CA 0 CODE 0
-106 CD 0 CODE 0
+94 BF 0 CODE 0
+96 C0 0 CODE 0
+97 C4 0 CODE 0
+98 C8 0 CODE 0
+99 CC 0 CODE 0
+100 CE 0 CODE 0
+101 CF 0 CODE 0
+102 D0 0 CODE 0
+103 D1 0 CODE 0
+104 D2 0 CODE 0
+105 D5 0 CODE 0
+106 D8 0 CODE 0
 main.c
 42 19 0 CODE 0
 43 19 0 CODE 0

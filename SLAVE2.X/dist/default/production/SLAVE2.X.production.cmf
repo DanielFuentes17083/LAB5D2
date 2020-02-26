@@ -11,19 +11,19 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$dist/default/production\SLAVE2.X.production.o
-cinit CODE 0 F F A 2
-text1 CODE 0 CE CE 10 2
-text2 CODE 0 B4 B4 1A 2
-text3 CODE 0 19 19 65 2
-maintext CODE 0 7E 7E 36 2
-cstackCOMMON COMMON 1 76 76 5 1
-intentry CODE 0 4 4 8 2
-bssCOMMON COMMON 1 70 70 6 1
-$C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
+$C:\Users\PowerLab\AppData\Local\Temp\sis.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
+$dist/default/production\SLAVE2.X.production.o
+cinit CODE 0 F F A 2
+text1 CODE 0 D9 D9 14 2
+text2 CODE 0 BF BF 1A 2
+text3 CODE 0 19 19 65 2
+maintext CODE 0 7E 7E 41 2
+cstackCOMMON COMMON 1 76 76 5 1
+intentry CODE 0 4 4 8 2
+bssCOMMON COMMON 1 70 70 6 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -39,13 +39,13 @@ BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST DE-1FFF 2
+CONST ED-1FFF 2
 ENTRY 3-3 2
-ENTRY DE-1FFF 2
+ENTRY ED-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE DE-1FFF 2
+CODE ED-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -53,9 +53,9 @@ SFR3 180-18F 1
 COMMON 7B-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE DE-1FFF 2
+STRCODE ED-1FFF 2
 STRING 3-3 2
-STRING DE-1FFF 2
+STRING ED-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -70,17 +70,17 @@ STRING DE-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\SLAVE2.X.production.o
-F cinit CODE >639:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
-F cinit CODE >642:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
-F cinit CODE >668:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
-10 cinit CODE >669:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
-11 cinit CODE >670:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
-12 cinit CODE >671:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
-13 cinit CODE >672:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
-14 cinit CODE >673:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
-15 cinit CODE >679:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
-15 cinit CODE >681:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
-16 cinit CODE >682:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
+F cinit CODE >643:C:\Users\PowerLab\AppData\Local\Temp\sis.s
+F cinit CODE >646:C:\Users\PowerLab\AppData\Local\Temp\sis.s
+F cinit CODE >672:C:\Users\PowerLab\AppData\Local\Temp\sis.s
+10 cinit CODE >673:C:\Users\PowerLab\AppData\Local\Temp\sis.s
+11 cinit CODE >674:C:\Users\PowerLab\AppData\Local\Temp\sis.s
+12 cinit CODE >675:C:\Users\PowerLab\AppData\Local\Temp\sis.s
+13 cinit CODE >676:C:\Users\PowerLab\AppData\Local\Temp\sis.s
+14 cinit CODE >677:C:\Users\PowerLab\AppData\Local\Temp\sis.s
+15 cinit CODE >683:C:\Users\PowerLab\AppData\Local\Temp\sis.s
+15 cinit CODE >685:C:\Users\PowerLab\AppData\Local\Temp\sis.s
+16 cinit CODE >686:C:\Users\PowerLab\AppData\Local\Temp\sis.s
 4 intentry CODE >42:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
 19 text3 CODE >42:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
 19 text3 CODE >43:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
@@ -107,26 +107,28 @@ F cinit CODE >668:C:\Users\PowerLab\AppData\Local\Temp\s2r8.s
 74 text3 CODE >70:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
 74 text3 CODE >72:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
 77 text3 CODE >74:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
-B4 text2 CODE >94:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-B5 text2 CODE >96:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-B9 text2 CODE >97:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-BD text2 CODE >98:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-C1 text2 CODE >99:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-C3 text2 CODE >100:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-C4 text2 CODE >101:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-C5 text2 CODE >102:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-C6 text2 CODE >103:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-C7 text2 CODE >104:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-CA text2 CODE >105:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-CD text2 CODE >106:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
-CE text1 CODE >98:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
-CE text1 CODE >99:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
-D1 text1 CODE >100:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
-D2 text1 CODE >101:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
-D3 text1 CODE >102:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
-D4 text1 CODE >103:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
-D7 text1 CODE >104:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
-DD text1 CODE >105:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+BF text2 CODE >94:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+C0 text2 CODE >96:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+C4 text2 CODE >97:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+C8 text2 CODE >98:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+CC text2 CODE >99:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+CE text2 CODE >100:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+CF text2 CODE >101:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+D0 text2 CODE >102:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+D1 text2 CODE >103:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+D2 text2 CODE >104:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+D5 text2 CODE >105:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+D8 text2 CODE >106:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\I2C.c
+D9 text1 CODE >105:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+D9 text1 CODE >106:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+DC text1 CODE >107:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+DD text1 CODE >108:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+E0 text1 CODE >109:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+E1 text1 CODE >110:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+E2 text1 CODE >111:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+E3 text1 CODE >112:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+E6 text1 CODE >113:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+EC text1 CODE >114:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
 7E maintext CODE >76:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
 7E maintext CODE >77:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
 83 maintext CODE >79:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
@@ -139,7 +141,11 @@ DD text1 CODE >105:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D
 A5 maintext CODE >88:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
 A7 maintext CODE >89:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
 AD maintext CODE >90:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
-AE maintext CODE >92:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+AF maintext CODE >92:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+B1 maintext CODE >94:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+B5 maintext CODE >95:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+B6 maintext CODE >98:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
+BA maintext CODE >99:C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\SLAVE2.X\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -163,29 +169,30 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 _BF 4A0 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _PEIE 5E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
+___sp 0 0 STACK 2 stack C:\Users\PowerLab\AppData\Local\Temp\sis.o
 _main FC 0 CODE 0 maintext dist/default/production\SLAVE2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-start 18 0 CODE 0 init C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
+start 18 0 CODE 0 init C:\Users\PowerLab\AppData\Local\Temp\sis.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\sis.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\sis.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\sis.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\sis.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\sis.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\PowerLab\AppData\Local\Temp\sis.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
 __Hclrtext 0 0 ABS 0 clrtext -
+_ANSELH 189 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _SSPCONbits 14 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
-___stacklo 0 0 ABS 0 - C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
-_I2C_Slave_Init 168 0 CODE 0 text2 dist/default/production\SLAVE2.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\PowerLab\AppData\Local\Temp\sis.o
+___stacklo 0 0 ABS 0 - C:\Users\PowerLab\AppData\Local\Temp\sis.o
+_I2C_Slave_Init 17E 0 CODE 0 text2 dist/default/production\SLAVE2.X.production.o
 __size_of_setup 0 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
@@ -197,13 +204,13 @@ _SSPBUF 13 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _SSPCON 14 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
+___int_sp 0 0 STACK 2 stack C:\Users\PowerLab\AppData\Local\Temp\sis.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
 __Hbank3 0 0 ABS 0 bank3 -
 __Hcinit 32 0 CODE 0 cinit -
-__end_of_I2C_Slave_Init 19C 0 CODE 0 text2 dist/default/production\SLAVE2.X.production.o
+__end_of_I2C_Slave_Init 1B2 0 CODE 0 text2 dist/default/production\SLAVE2.X.production.o
 __Hidloc 0 0 IDLOC 0 idloc -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
@@ -245,7 +252,7 @@ saved_w 7E 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __end_of_isr FC 0 CODE 0 text3 dist/default/production\SLAVE2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\PowerLab\AppData\Local\Temp\s2r8.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\PowerLab\AppData\Local\Temp\sis.o
 __pmaintext FC 0 CODE 0 maintext dist/default/production\SLAVE2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
@@ -267,8 +274,8 @@ __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
 _SSPCON2bits 91 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-__ptext1 19C 0 CODE 0 text1 dist/default/production\SLAVE2.X.production.o
-__ptext2 168 0 CODE 0 text2 dist/default/production\SLAVE2.X.production.o
+__ptext1 1B2 0 CODE 0 text1 dist/default/production\SLAVE2.X.production.o
+__ptext2 17E 0 CODE 0 text2 dist/default/production\SLAVE2.X.production.o
 __ptext3 32 0 CODE 0 text3 dist/default/production\SLAVE2.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
@@ -281,20 +288,21 @@ __pcstackCOMMON 76 0 COMMON 1 cstackCOMMON dist/default/production\SLAVE2.X.prod
 _SSPCON2 91 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _SSPSTAT 94 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-__end_of_main 168 0 CODE 0 maintext dist/default/production\SLAVE2.X.production.o
+__end_of_main 17E 0 CODE 0 maintext dist/default/production\SLAVE2.X.production.o
+_ANSEL 188 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _SSPIE 463 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _SSPIF 63 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _TRISA 85 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-__end_of_setup 1BC 0 CODE 0 text1 dist/default/production\SLAVE2.X.production.o
+__end_of_setup 1DA 0 CODE 0 text1 dist/default/production\SLAVE2.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 interrupt_function 8 0 CODE 0 intentry dist/default/production\SLAVE2.X.production.o
 _past1 71 0 COMMON 1 bssCOMMON dist/default/production\SLAVE2.X.production.o
 _past2 70 0 COMMON 1 bssCOMMON dist/default/production\SLAVE2.X.production.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
-_setup 19C 0 CODE 0 text1 dist/default/production\SLAVE2.X.production.o
+_setup 1B2 0 CODE 0 text1 dist/default/production\SLAVE2.X.production.o
 _SSPSTATbits 94 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\SLAVE2.X.production.o
 __size_of_isr 0 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
@@ -326,7 +334,7 @@ __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\SLAVE2.X.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-intentry 0 4 8 DA 2
+intentry 0 4 8 E9 2
 reset_vec 0 0 0 3 2
 bssCOMMON 1 70 70 B 1
 config 0 2007 400E 2 2

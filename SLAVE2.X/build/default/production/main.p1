@@ -90,6 +90,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "245
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 245: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
 [v _PORTBbits `VS7 ~T0 @X0 0 e@6 ]
+"3387
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
+[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"3449
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
 "1416
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -557,8 +563,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! > -> _PORTA `i -> 15 `i 158  ]
 {
 "90
-[; ;main.c: 90:                 PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;main.c: 90:                 PORTA = 15;
+[e = _PORTA -> -> 15 `i `uc ]
 "91
 [; ;main.c: 91:             }
 }
@@ -571,43 +577,71 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 157 ]
 "94
-[; ;main.c: 94:         }
+[; ;main.c: 94:         if (PORTBbits.RB0 == 0){
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 159  ]
+{
+"95
+[; ;main.c: 95:             past1 = 0;
+[e = _past1 -> -> 0 `i `uc ]
+"96
+[; ;main.c: 96:         }
+}
+[e :U 159 ]
+"98
+[; ;main.c: 98:         if (PORTBbits.RB1 == 0){
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 160  ]
+{
+"99
+[; ;main.c: 99:             past2 = 0;
+[e = _past2 -> -> 0 `i `uc ]
+"100
+[; ;main.c: 100:         }
+}
+[e :U 160 ]
+"101
+[; ;main.c: 101:     }
 }
 [e :U 151 ]
 [e $U 152  ]
 [e :U 153 ]
-"95
-[; ;main.c: 95:     return;
+"102
+[; ;main.c: 102:     return;
 [e $UE 150  ]
-"96
-[; ;main.c: 96: }
+"103
+[; ;main.c: 103: }
 [e :UE 150 ]
 }
-"98
-[; ;main.c: 98: void setup(void){
+"105
+[; ;main.c: 105: void setup(void){
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"99
-[; ;main.c: 99:     TRISA = 0;
+"106
+[; ;main.c: 106:     ANSEL = 0;
+[e = _ANSEL -> -> 0 `i `uc ]
+"107
+[; ;main.c: 107:     ANSELH = 0;
+[e = _ANSELH -> -> 0 `i `uc ]
+"108
+[; ;main.c: 108:     TRISA = 0;
 [e = _TRISA -> -> 0 `i `uc ]
-"100
-[; ;main.c: 100:     TRISB = 0;
+"109
+[; ;main.c: 109:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"101
-[; ;main.c: 101:     TRISBbits.TRISB0 = 1;
+"110
+[; ;main.c: 110:     TRISBbits.TRISB0 = 1;
 [e = . . _TRISBbits 0 0 -> -> 1 `i `uc ]
-"102
-[; ;main.c: 102:     TRISBbits.TRISB1 = 1;
+"111
+[; ;main.c: 111:     TRISBbits.TRISB1 = 1;
 [e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
-"103
-[; ;main.c: 103:     PORTA = 0;
+"112
+[; ;main.c: 112:     PORTA = 0;
 [e = _PORTA -> -> 0 `i `uc ]
-"104
-[; ;main.c: 104:     I2C_Slave_Init(0x40);
+"113
+[; ;main.c: 113:     I2C_Slave_Init(0x40);
 [e ( _I2C_Slave_Init (1 -> -> 64 `i `uc ]
-"105
-[; ;main.c: 105: }
-[e :UE 159 ]
+"114
+[; ;main.c: 114: }
+[e :UE 161 ]
 }
