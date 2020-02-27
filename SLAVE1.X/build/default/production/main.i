@@ -7,13 +7,7 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-
-
-
-
-
-
-
+# 10 "main.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -166,7 +160,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 26 "main.c" 2
+# 28 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -265,7 +259,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 27 "main.c" 2
+# 29 "main.c" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -2752,7 +2746,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 29 "main.c" 2
+# 31 "main.c" 2
 
 # 1 "./ADC.h" 1
 
@@ -2763,7 +2757,7 @@ extern __bank0 __bit __timeout;
 
 void ADConfig(void);
 void channelS(uint8_t channel);
-# 30 "main.c" 2
+# 32 "main.c" 2
 
 # 1 "./I2C.h" 1
 
@@ -2810,7 +2804,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 31 "main.c" 2
+# 33 "main.c" 2
 
 
 uint8_t z;
@@ -2880,7 +2874,6 @@ void setup(void){
     ANSEL = 0;
     ANSELH = 0;
     ANSELbits.ANS0 = 1;
-    ANSELbits.ANS1 = 1;
 
     TRISA = 0x03;
     TRISB = 0;

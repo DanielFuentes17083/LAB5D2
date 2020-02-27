@@ -3,6 +3,8 @@
  * Author: PowerLab
  *
  * Created on 13 de febrero de 2020, 12:33 PM
+  * 
+  * La libreria e interrupciones utilizadas para la comunicacion I2C fueron tomadas del ejemplo de Pablo Mazariegos subido en clase
  */
 
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -63,7 +65,7 @@ void __interrupt() isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = PORTA;
+            SSPBUF = PORTA;             //Envia el contador
             SSPCONbits.CKP = 1;
             __delay_us(250);
             while(SSPSTATbits.BF);
@@ -105,10 +107,10 @@ void main(void) {
 void setup(void){
     ANSEL = 0;
     ANSELH = 0;
-    TRISA = 0;
-    TRISB = 0;
+    TRISA = 0;                  //LEDs
+    TRISB = 0;                  //Botones
     TRISBbits.TRISB0 = 1;
     TRISBbits.TRISB1 = 1;
     PORTA = 0;
-    I2C_Slave_Init(0x40);
+    I2C_Slave_Init(0x40);       //Configura la comunicacion I2C como Slave con direccion 0x40
 }

@@ -3,6 +3,8 @@
  * Author: PowerLab
  *
  * Created on 13 de febrero de 2020, 12:33 PM
+  * 
+  * La libreria de la comunicacion I2C fue tomada del ejemplo subido por Pablo Mazariegos
  */
 
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -32,7 +34,7 @@
 
 uint8_t z;
 uint8_t dato;
-uint8_t readed;
+uint8_t readed;                 //definicion de variabbles
 uint8_t pot;
 
 void setup(void);
@@ -63,7 +65,7 @@ void __interrupt() isr(void){
         }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
             z = SSPBUF;
             BF = 0;
-            SSPBUF = pot;
+            SSPBUF = pot;                   //Manda el valor del ADC por I2C
             SSPCONbits.CKP = 1;
             __delay_us(250);
             while(SSPSTATbits.BF);
@@ -74,7 +76,7 @@ void __interrupt() isr(void){
     
     if(PIR1bits.ADIF == 1){            //Si es el ADC
         PIR1bits.ADIF = 0;
-        pot = ADRESH;                               //Primer Pot
+        pot = ADRESH;                  //Primer Pot
         ADRESH = 0;
     }
     ei();
@@ -83,21 +85,20 @@ void __interrupt() isr(void){
 void main(void) {
     setup();
     ADConfig();             //Configuracion de ADC
-    channelS(0); 
+    channelS(0);            //Seleccion de canal del ADC
     
     while(1){
-        ADCON0bits.GO = 1;
+        ADCON0bits.GO = 1;      //Inicia conversion del ADC
         __delay_ms(10);
     }
     
     return;
 }
 
-void setup(void){
+void setup(void){               //Configuracion de puertos
     ANSEL = 0;
     ANSELH = 0;
-    ANSELbits.ANS0 = 1;     
-    ANSELbits.ANS1 = 1;
+    ANSELbits.ANS0 = 1;         //ADC
     
     TRISA = 0x03;
     TRISB = 0;
@@ -110,5 +111,5 @@ void setup(void){
     INTCONbits.PEIE = 1;        // Habilitamos interrupciones PEIE
     PIE1bits.ADIE = 1;
     PIR1bits.ADIF = 0;
-    I2C_Slave_Init(0x50);   
+    I2C_Slave_Init(0x50);       //habilitamos comunicacion I2C como Slave con dirección 0x50
 }
