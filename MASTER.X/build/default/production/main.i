@@ -7,7 +7,7 @@
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 14 "main.c"
+# 16 "main.c"
 #pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -160,7 +160,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 32 "main.c" 2
+# 34 "main.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -259,7 +259,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 33 "main.c" 2
+# 35 "main.c" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -2746,7 +2746,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 35 "main.c" 2
+# 37 "main.c" 2
 
 
 # 1 "./LCD.h" 1
@@ -2760,7 +2760,7 @@ void LCDcmd(unsigned char cmd);
 void LCDwrite(unsigned char dato);
 void LCDisplay(char *val);
 void LCDcursorSet(unsigned char row, unsigned char column);
-# 37 "main.c" 2
+# 39 "main.c" 2
 
 # 1 "./I2C.h" 1
 
@@ -2807,7 +2807,7 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 38 "main.c" 2
+# 40 "main.c" 2
 
 
 void config(void);
@@ -2901,6 +2901,7 @@ void main(void) {
             LCDisplay(decpot1);
         }
         LCDisplay("V");
+
         LCDcursorSet(2,7);
         if (cont <= 9){
             LCDisplay("0");
@@ -2937,8 +2938,6 @@ void config(void){
     TRISD = 0x00;
     ANSELH = 0x00;
     ANSEL = 0x00;
-    ANSELbits.ANS0 = 1;
-    ANSELbits.ANS1 = 1;
     PORTA = 0x00;
     PORTB = 0x00;
     PORTC = 0x00;
