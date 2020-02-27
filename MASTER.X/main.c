@@ -5,6 +5,12 @@
  * Created on 13 de febrero de 2020, 12:33 PM
  */
 
+/*
+ * El codigo utilizado para la comunicacion I2C entre el master y el RTC fue creado por
+ * Aswinth Raj; fue tomado del sitio https://circuitdigest.com/microcontroller-projects/pic16f877a-ds3231-rtc-digital-clock
+ * y editado por Daniel Fuentes Oajaca
+ */
+
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
@@ -32,9 +38,13 @@
 #include "I2C.h"
 
 void config(void);
+int  BCD_2_DEC(int to_convert);
+int DEC_2_BCD (int to_convert);
 
 uint8_t cont = 0;
 uint8_t va1 = 0;
+uint8_t sec = 00;
+uint8_t min = 00;
 float pot1 = 0;
 int int1 = 0;
 int dec1 = 0;
@@ -42,6 +52,8 @@ float dectemp1 = 0;
 char contStr[1];
 char potStr1[3];
 char decpot1[2];
+char sec1[2];
+char min1[2];
 
 void main(void) {
     config();               //configuracion de bits
@@ -49,12 +61,37 @@ void main(void) {
     LCDcursorSet(1,1);
     __delay_ms(2);
     LCDisplay("S1:");
-    LCDcursorSet(1,6);
+    LCDcursorSet(1,5);
     LCDisplay("CONT:");               //Pone los titulos en la pantalla
-    LCDcursorSet(1,13);
-    LCDisplay("S2:");
+    LCDcursorSet(1,11);
+    LCDisplay("TIME:");
     
     while(1){
+        
+        I2C_Master_Start();       
+        I2C_Master_Write(0xD0);                         
+        I2C_Master_Write(0);    
+        I2C_Master_Stop();
+
+        I2C_Master_Start();
+        I2C_Master_Write(0xD1);                              // Initialize data read
+        sec = BCD_2_DEC(I2C_Master_Read(0));                 
+        I2C_Master_Stop(); 
+
+        I2C_Master_Start();
+        I2C_Master_Write(0xD1);                              // Initialize data read
+        min = BCD_2_DEC(I2C_Master_Read(0));                
+        I2C_Master_Stop();  
+
+      //END Reading  
+        I2C_Master_Start();
+        I2C_Master_Write(0xD1);                              // Initialize data read
+        I2C_Master_Read(0);                                 
+        I2C_Master_Stop();
+        __delay_ms(10);
+        
+        sprintf(sec1, "%d",sec);
+        sprintf(min1, "%d",min);
         
         
         I2C_Master_Start();
@@ -63,13 +100,13 @@ void main(void) {
         I2C_Master_Stop();
         __delay_ms(10);
         
- 
         
         I2C_Master_Start();
         I2C_Master_Write(0x41);
         cont = I2C_Master_Read(0);
         I2C_Master_Stop();
         __delay_ms(10);
+        
         
         sprintf(contStr, "%d",cont);
         
@@ -98,7 +135,23 @@ void main(void) {
         }else{
             LCDisplay(contStr);
         }
-        __delay_ms(2);
+        
+        
+        LCDcursorSet(2,11);
+        if(min < 10){
+            LCDisplay("0");
+            LCDisplay(min1);
+        }else{
+            LCDisplay(min1);
+        }
+        LCDcursorSet(2,13);
+        LCDisplay(":");
+        if(sec < 10){
+            LCDisplay("0");
+            LCDisplay(sec1);
+        }else{
+            LCDisplay(sec1);
+        }
         
         
     }
@@ -118,4 +171,14 @@ void config(void){
     PORTC = 0x00;
     PORTD = 0x00;
     I2C_Master_Init(100000);        // Inicializar Comuncación I2C
+}
+
+int  BCD_2_DEC(int to_convert)
+{
+   return (to_convert >> 4) * 10 + (to_convert & 0x0F);
+}
+
+int DEC_2_BCD (int to_convert)
+{
+   return ((to_convert / 10) << 4) + (to_convert % 10);
 }

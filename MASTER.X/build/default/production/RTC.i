@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "RTC.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,260 +6,16 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 14 "main.c"
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
+# 1 "RTC.c" 2
 
 
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
 
 
 
 
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int8_t;
+# 1 "./I2C.h" 1
 
-
-
-
-
-
-typedef signed int int16_t;
-
-
-
-
-
-
-
-typedef __int24 int24_t;
-
-
-
-
-
-
-
-typedef signed long int int32_t;
-# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint8_t;
-
-
-
-
-
-typedef unsigned int uint16_t;
-
-
-
-
-
-
-typedef __uint24 uint24_t;
-
-
-
-
-
-
-typedef unsigned long int uint32_t;
-# 88 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_least8_t;
-
-
-
-
-
-
-
-typedef signed int int_least16_t;
-# 109 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_least24_t;
-# 118 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed long int int_least32_t;
-# 136 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_least8_t;
-
-
-
-
-
-
-typedef unsigned int uint_least16_t;
-# 154 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_least24_t;
-
-
-
-
-
-
-
-typedef unsigned long int uint_least32_t;
-# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef signed char int_fast8_t;
-
-
-
-
-
-
-typedef signed int int_fast16_t;
-# 200 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __int24 int_fast24_t;
-
-
-
-
-
-
-
-typedef signed long int int_fast32_t;
-# 224 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef unsigned char uint_fast8_t;
-
-
-
-
-
-typedef unsigned int uint_fast16_t;
-# 240 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef __uint24 uint_fast24_t;
-
-
-
-
-
-
-typedef unsigned long int uint_fast32_t;
-# 268 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef int32_t intmax_t;
-# 282 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
-typedef uint32_t uintmax_t;
-
-
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-# 32 "main.c" 2
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__size_t.h" 1 3
-
-
-
-typedef unsigned size_t;
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdarg.h" 1 3
-
-
-
-
-
-
-typedef void * va_list[1];
-
-#pragma intrinsic(__va_start)
-extern void * __va_start(void);
-
-#pragma intrinsic(__va_arg)
-extern void * __va_arg(void *, ...);
-# 11 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-struct __prbuf
-{
- char * ptr;
- void (* func)(char);
-};
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\conio.h" 1 3
-
-
-
-
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\conio.h" 2 3
-
-
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 85 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 2 3
-
-
-
-extern int cprintf(char *, ...);
-#pragma printf_check(cprintf)
-
-
-
-extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 3
-#pragma printf_check(vprintf) const
-#pragma printf_check(vsprintf) const
-
-extern char * gets(char *);
-extern int puts(const char *);
-extern int scanf(const char *, ...) __attribute__((unsupported("scanf() is not supported by this compiler")));
-extern int sscanf(const char *, const char *, ...) __attribute__((unsupported("sscanf() is not supported by this compiler")));
-extern int vprintf(const char *, va_list) __attribute__((unsupported("vprintf() is not supported by this compiler")));
-extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-extern int vscanf(const char *, va_list ap) __attribute__((unsupported("vscanf() is not supported by this compiler")));
-extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupported("vsscanf() is not supported by this compiler")));
-
-#pragma printf_check(printf) const
-#pragma printf_check(sprintf) const
-extern int sprintf(char *, const char *, ...);
-extern int printf(const char *, ...);
-# 33 "main.c" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
@@ -2746,29 +2502,142 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 35 "main.c" 2
-
-
-# 1 "./LCD.h" 1
-
-
-
-
-
-void LCD8bits_init(void);
-void LCDcmd(unsigned char cmd);
-void LCDwrite(unsigned char dato);
-void LCDisplay(char *val);
-void LCDcursorSet(unsigned char row, unsigned char column);
-# 37 "main.c" 2
-
-# 1 "./I2C.h" 1
-
-
-
+# 4 "./I2C.h" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
+# 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int8_t;
+
+
+
+
+
+
+typedef signed int int16_t;
+
+
+
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+
+
+
+typedef signed long int int32_t;
+# 52 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint8_t;
+
+
+
+
+
+typedef unsigned int uint16_t;
+
+
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+
+
+typedef unsigned long int uint32_t;
+# 88 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_least8_t;
+
+
+
+
+
+
+
+typedef signed int int_least16_t;
+# 109 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_least24_t;
+# 118 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef signed long int int_least32_t;
+# 136 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_least8_t;
+
+
+
+
+
+
+typedef unsigned int uint_least16_t;
+# 154 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_least24_t;
+
+
+
+
+
+
+
+typedef unsigned long int uint_least32_t;
+# 181 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef signed char int_fast8_t;
+
+
+
+
+
+
+typedef signed int int_fast16_t;
+# 200 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef __int24 int_fast24_t;
+
+
+
+
+
+
+
+typedef signed long int int_fast32_t;
+# 224 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef unsigned char uint_fast8_t;
+
+
+
+
+
+typedef unsigned int uint_fast16_t;
+# 240 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef __uint24 uint_fast24_t;
+
+
+
+
+
+
+typedef unsigned long int uint_fast32_t;
+# 268 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef int32_t intmax_t;
+# 282 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
+typedef uint32_t uintmax_t;
+
+
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
 # 6 "./I2C.h" 2
 # 15 "./I2C.h"
 void I2C_Master_Init(const unsigned long c);
@@ -2807,144 +2676,22 @@ unsigned short I2C_Master_Read(unsigned short a);
 
 
 void I2C_Slave_Init(uint8_t address);
-# 38 "main.c" 2
+# 8 "RTC.c" 2
+
+# 1 "./RTC.h" 1
 
 
-void config(void);
+
+
+
+
+
 int BCD_2_DEC(int to_convert);
 int DEC_2_BCD (int to_convert);
-
-uint8_t cont = 0;
-uint8_t va1 = 0;
-uint8_t sec = 00;
-uint8_t min = 00;
-float pot1 = 0;
-int int1 = 0;
-int dec1 = 0;
-float dectemp1 = 0;
-char contStr[1];
-char potStr1[3];
-char decpot1[2];
-char sec1[2];
-char min1[2];
-
-void main(void) {
-    config();
-    LCD8bits_init();
-    LCDcursorSet(1,1);
-    _delay((unsigned long)((2)*(4000000/4000.0)));
-    LCDisplay("S1:");
-    LCDcursorSet(1,5);
-    LCDisplay("CONT:");
-    LCDcursorSet(1,11);
-    LCDisplay("TIME:");
-
-    while(1){
-
-        I2C_Master_Start();
-        I2C_Master_Write(0xD0);
-        I2C_Master_Write(0);
-        I2C_Master_Stop();
-
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        sec = BCD_2_DEC(I2C_Master_Read(0));
-        I2C_Master_Stop();
-
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        min = BCD_2_DEC(I2C_Master_Read(0));
-        I2C_Master_Stop();
+# 9 "RTC.c" 2
 
 
-        I2C_Master_Start();
-        I2C_Master_Write(0xD1);
-        I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(4000000/4000.0)));
 
-        sprintf(sec1, "%d",sec);
-        sprintf(min1, "%d",min);
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x51);
-        va1 = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(4000000/4000.0)));
-
-
-        I2C_Master_Start();
-        I2C_Master_Write(0x41);
-        cont = I2C_Master_Read(0);
-        I2C_Master_Stop();
-        _delay((unsigned long)((10)*(4000000/4000.0)));
-
-
-        sprintf(contStr, "%d",cont);
-
-        pot1 = va1;
-        pot1 = pot1 * 5/255;
-        int1 = pot1;
-        dectemp1 = (pot1 - int1)*100;
-        dec1 = dectemp1;
-        sprintf(potStr1, "%d",int1);
-        sprintf(decpot1, "%d",dec1);
-
-        LCDcursorSet(2,0);
-        LCDisplay(potStr1);
-        LCDisplay(".");
-        if (dec1<10){
-            LCDisplay("0");
-            LCDisplay(decpot1);
-        }else{
-            LCDisplay(decpot1);
-        }
-        LCDisplay("V");
-        LCDcursorSet(2,7);
-        if (cont <= 9){
-            LCDisplay("0");
-            LCDisplay(contStr);
-        }else{
-            LCDisplay(contStr);
-        }
-
-
-        LCDcursorSet(2,11);
-        if(min < 10){
-            LCDisplay("0");
-            LCDisplay(min1);
-        }else{
-            LCDisplay(min1);
-        }
-        LCDcursorSet(2,13);
-        LCDisplay(":");
-        if(sec < 10){
-            LCDisplay("0");
-            LCDisplay(sec1);
-        }else{
-            LCDisplay(sec1);
-        }
-
-
-    }
-
-    return;
-}
-
-void config(void){
-    TRISB = 0x00;
-    TRISD = 0x00;
-    ANSELH = 0x00;
-    ANSEL = 0x00;
-    ANSELbits.ANS0 = 1;
-    ANSELbits.ANS1 = 1;
-    PORTA = 0x00;
-    PORTB = 0x00;
-    PORTC = 0x00;
-    PORTD = 0x00;
-    I2C_Master_Init(100000);
-}
 
 int BCD_2_DEC(int to_convert)
 {

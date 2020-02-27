@@ -5,6 +5,10 @@
 [d frameptr 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "505 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 "43 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\fltol.c
@@ -21,6 +25,8 @@
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\xxtofl.c
@@ -51,15 +57,17 @@
 [v _LCDisplay LCDisplay `(v  1 e 1 0 ]
 "52
 [v _LCDcursorSet LCDcursorSet `(v  1 e 1 0 ]
-"46 C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\MASTER.X\main.c
+"58 C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\MASTER.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"109
+"162
 [v _config config `(v  1 e 1 0 ]
+"176
+[v _BCD_2_DEC BCD_2_DEC `(i  1 e 2 0 ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "228
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S146 . 1 `uc 1 RB0 1 0 :1:0 
+[s S164 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -69,8 +77,8 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "245
-[u S155 . 1 `S146 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES155  1 e 1 @6 ]
+[u S173 . 1 `S164 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES173  1 e 1 @6 ]
 "290
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "352
@@ -81,7 +89,7 @@
 [v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
 "1478
 [v _TRISB TRISB `VEuc  1 e 1 @134 ]
-[s S190 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S208 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -91,13 +99,13 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1557
-[u S199 . 1 `S190 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES199  1 e 1 @135 ]
+[u S217 . 1 `S208 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES217  1 e 1 @135 ]
 "1602
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
 "1979
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
-[s S211 . 1 `uc 1 SEN 1 0 :1:0 
+[s S229 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -107,15 +115,15 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "1996
-[u S220 . 1 `S211 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES220  1 e 1 @145 ]
+[u S238 . 1 `S229 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES238  1 e 1 @145 ]
 "2048
 [v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
 "2177
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
-[s S75 . 1 `uc 1 ANS0 1 0 :1:0 
+[s S80 . 1 `uc 1 ANS0 1 0 :1:0 
 `uc 1 ANS1 1 0 :1:1 
 `uc 1 ANS2 1 0 :1:2 
 `uc 1 ANS3 1 0 :1:3 
@@ -125,8 +133,8 @@
 `uc 1 ANS7 1 0 :1:7 
 ]
 "3404
-[u S84 . 1 `S75 1 . 1 0 ]
-[v _ANSELbits ANSELbits `VES84  1 e 1 @392 ]
+[u S89 . 1 `S80 1 . 1 0 ]
+[v _ANSELbits ANSELbits `VES89  1 e 1 @392 ]
 "3449
 [v _ANSELH ANSELH `VEuc  1 e 1 @393 ]
 "3896
@@ -143,28 +151,36 @@
 [v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
 "358 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
 [v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
-"36 C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\MASTER.X\main.c
+"44 C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\MASTER.X\main.c
 [v _cont cont `uc  1 e 1 0 ]
-"37
+"45
 [v _va1 va1 `uc  1 e 1 0 ]
-"38
-[v _pot1 pot1 `f  1 e 4 0 ]
-"39
-[v _int1 int1 `i  1 e 2 0 ]
-"40
-[v _dec1 dec1 `i  1 e 2 0 ]
-"41
-[v _dectemp1 dectemp1 `f  1 e 4 0 ]
-"42
-[v _contStr contStr `[1]uc  1 e 1 0 ]
-"43
-[v _potStr1 potStr1 `[3]uc  1 e 3 0 ]
-"44
-[v _decpot1 decpot1 `[2]uc  1 e 2 0 ]
 "46
+[v _sec sec `uc  1 e 1 0 ]
+"47
+[v _min min `uc  1 e 1 0 ]
+"48
+[v _pot1 pot1 `f  1 e 4 0 ]
+"49
+[v _int1 int1 `i  1 e 2 0 ]
+"50
+[v _dec1 dec1 `i  1 e 2 0 ]
+"51
+[v _dectemp1 dectemp1 `f  1 e 4 0 ]
+"52
+[v _contStr contStr `[1]uc  1 e 1 0 ]
+"53
+[v _potStr1 potStr1 `[3]uc  1 e 3 0 ]
+"54
+[v _decpot1 decpot1 `[2]uc  1 e 2 0 ]
+"55
+[v _sec1 sec1 `[2]uc  1 e 2 0 ]
+"56
+[v _min1 min1 `[2]uc  1 e 2 0 ]
+"58
 [v _main main `(v  1 e 1 0 ]
 {
-"107
+"160
 } 0
 "505 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -209,10 +225,10 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
 "30
 } 0
-"109 C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\MASTER.X\main.c
+"162 C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\MASTER.X\main.c
 [v _config config `(v  1 e 1 0 ]
 {
-"121
+"174
 } 0
 "17 C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\MASTER.X\I2C.c
 [v _I2C_Master_Init I2C_Master_Init `(v  1 e 1 0 ]
@@ -283,17 +299,17 @@
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S589 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S607 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S594 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S597 . 4 `l 1 i 4 0 `d 1 f 4 0 `S589 1 fAsBytes 4 0 `S594 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S597  1 a 4 36 ]
+[s S612 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S615 . 4 `l 1 i 4 0 `d 1 f 4 0 `S607 1 fAsBytes 4 0 `S612 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S615  1 a 4 36 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 30 ]
-[s S666 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S684 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S669 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S666 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S669  1 a 2 40 ]
+[u S687 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S684 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S687  1 a 2 40 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 35 ]
 "11
@@ -404,4 +420,20 @@
 [v _I2C_Master_Wait I2C_Master_Wait `(v  1 e 1 0 ]
 {
 "36
+} 0
+"176 C:\Users\PowerLab\Documents\Nueva carpeta\Nueva carpeta\LAB5D2\MASTER.X\main.c
+[v _BCD_2_DEC BCD_2_DEC `(i  1 e 2 0 ]
+{
+[v BCD_2_DEC@to_convert to_convert `i  1 p 2 6 ]
+"179
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c90\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
 } 0
